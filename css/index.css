@@ -1,0 +1,450 @@
+:root
+{
+    --primary:rgb(16, 157, 203);
+    --lightpurple:rgb(222, 119, 222);
+    --dark:rgb(8, 8, 56);
+}
+body{
+    margin: 0;padding: 0;box-sizing: border-box;
+    font-family: sans-serif;    
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark);
+}
+
+main nav
+{
+    width: 100%;
+    height: 10%;
+    /* background-color: red; */
+
+    display: flex;
+}
+main nav .logo
+{
+    width: 20%;
+    height: 100%;
+    /* background-color: blue; */
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    font-weight: bold;
+    color: white;
+
+    user-select: none;
+}
+main nav .nav-items
+{
+    width: 60%;
+    height: 100%;
+    /* background-color: gold; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main nav .nav-items ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+    width: 80%;
+    gap: 20px;
+}
+main nav .nav-items ul li{
+    font-weight: bold;
+    color: white;
+
+    padding-bottom: 2px;
+    cursor: pointer;user-select: none;
+
+    transition: .2s;
+}
+main nav .nav-items ul li:hover{
+    box-shadow: 0px 3px 0px white;
+}
+main nav .nav-icons
+{
+    width: 20%;
+    height: 100%;
+    /* background-color: blue; */
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+main nav .nav-icons i{
+    background-color: transparent;
+    color: white;
+
+    cursor: pointer;user-select: none;
+    transition: .2s;
+
+    font-size: 20px;
+}
+main nav .nav-icons i:hover{
+    color: gold;
+}
+
+/**/
+
+main .content{
+    width: 100%;
+    height: 90%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content .inner-content
+{
+    width: 90%;
+    height: 80%;
+
+    display: flex;
+
+    position: relative;
+    /* background-color: red; */
+    margin-left: 10%;
+    
+}
+main .content .left{
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: start;
+    color: white;
+    z-index: 1;
+}
+main .content .left p:nth-child(1),main .content .left p:nth-child(2){
+    font-size: 50px;
+    margin: 10px;
+    font-weight: bold;
+    width: 80%;
+}
+main .content .left p:nth-child(1){
+    background-image: linear-gradient(to right,var(--lightpurple),var(--primary));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+main .content .left p:nth-child(3){
+    width: 80%;
+}
+main .content .left .btn{
+    padding: 20px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-image: linear-gradient(to right,var(--lightpurple),var(--primary));
+    color: white;
+    font-weight: bold;
+
+    transition: .3s;
+    cursor: pointer;
+    
+}
+main .content .left .btn:hover{
+    background-image: linear-gradient(to right ,black,black)
+}
+
+
+/**/
+main .content .right{
+    height: 100%;
+    width: 50%;
+
+    position: relative;
+    z-index: 1;
+}
+main .content .right .profile-photo{
+   width: 160px;
+   height: 160px;
+   border-radius: 50%;
+   
+   
+
+   
+   background: linear-gradient(to right,var(--lightpurple),var(--primary));
+
+
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-100%,-100%);
+
+   box-shadow: 0px 5px 10px var(--primary);
+}
+
+main .content .right .profile-photo::before{
+    content: "";
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url(../img/profile.jpg);
+    background-size: cover;
+    
+    
+}
+
+main .content .right .profile-photo::after{
+    content: "";
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: linear-gradient(to right,var(--lightpurple),var(--primary));
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+
+    z-index: -1;
+}
+/**/
+.empty-circle{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(to right,var(--lightpurple),var(--primary));
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%,-40%);
+    z-index: 0;
+
+}
+.empty-circle::before{
+    content: "";
+    width: 99%;
+    height: 99%;
+    border-radius: 50%;
+    background-color: var(--dark);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu{
+    display: none;
+}
+
+
+
+
+/**/
+@media (max-width:800px) {
+    .empty-circle{
+        display: none;
+    }
+    main .content .right .profile-photo::after{
+        display: none;
+    }
+
+    main .content .right .profile-photo
+    {
+        margin-top: 50px;
+        margin-left: 80px;
+    }
+
+    main .content .left p:nth-child(1),main .content .left p:nth-child(2){
+        width: 95%;
+        font-size: 30px;
+    }
+
+    main .content .left p:nth-child(3){
+        width: 95%;
+    }
+
+    .btn{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-60%,250%);
+    }
+}
+
+.mobile-nav{
+    display: none;
+}
+@media(max-width:550px){
+    main nav
+    {
+        display: none;
+    }
+    .menu{
+        display: block;
+        position: absolute;
+        right: 10px;
+
+        border: none;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+
+        cursor: pointer;
+        transition: .2s;
+    }
+    .menu:hover{
+        color: var(--primary);
+        background-color: black;
+    }
+    .mobile-nav{
+        position: relative;
+
+        display: block;
+        width: 100%;
+        height: 10%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-nav .logo{
+        text-align: center;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-nav .list{
+        position: absolute;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: var(--primary);
+        width: 100%;
+        top: 100%;
+
+        z-index: 11;
+
+        transition: .3s;
+    }
+    .icons{
+        position: absolute;
+        top: 250%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right: 20px;
+        gap: 15px;
+
+        text-align: center;
+    }
+    .icons i{
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        border-radius: 10px;
+
+        user-select: none;cursor: pointer;
+        background-color: white;
+        padding: 5px;
+    }
+    .mobile-nav .list p{
+        user-select: none;cursor: pointer;
+        transition: .2s;
+    }
+    .mobile-nav .list p:hover{
+        color: var(--dark);
+    }
+    .mobile-nav .list.active{
+        top: -300%;
+    }
+    /* main nav .logo
+    {
+        background-color: gold;
+        width: 50%;
+    } */
+    /* main nav .nav-items
+    {
+        background-color: red;
+        width: 0;
+    }
+    main nav .nav-icons
+    {
+        background-color: green;
+        width: 50%;
+    }
+    main nav .nav-items ul{
+        background-color: rgba(16, 156, 203, 0.752);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        width: 100%;
+        height: 200%;
+        top: 70%;
+        gap: 15%;
+        z-index: 10;
+    }
+    main nav .nav-items ul li{
+        padding-bottom: 0px;
+    }
+    main nav .nav-items ul li:hover
+    {
+        box-shadow: none;
+        color: var(--lightpurple);
+    } */
+
+
+
+    main .content .inner-content
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        /* background-color: red; */
+
+        margin: auto;
+    }
+
+    main .content .right .profile-photo{
+        margin-top: 80px;
+    }
+    main .content .left{
+        /* background-color: green; */
+        width: 100%;
+        text-align: center;
+        
+    }
+    main .content .left p:nth-child(2){
+        margin-top: 0;
+        margin-bottom: 15%;
+    }
+
+    main .content .left p:nth-child(3)
+    {
+        display: none;
+    }
+    .btn{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,200%);
+    }
+}
